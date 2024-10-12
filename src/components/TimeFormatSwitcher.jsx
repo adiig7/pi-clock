@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { TimeFormatContext } from "../context/TimeFormatProvider";
 
 const TimeFormatSwitcher = () => {
-    const { is24HourFormat, setTimeFormat } = useContext(TimeFormatContext);
+  const { is24HourFormat, setTimeFormat } = useContext(TimeFormatContext);
 
   const baseClasses = "px-6 py-2 text-center text-lg rounded-xl";
 
@@ -16,9 +16,7 @@ const TimeFormatSwitcher = () => {
               ? "bg-gray-200 text-black"
               : "bg-black text-green-500"
           }`}
-          onClick={() => {
-            setTimeFormat(false);
-          }}
+          onClick={() => setTimeFormat(false)}
         >
           12
         </div>
@@ -28,10 +26,7 @@ const TimeFormatSwitcher = () => {
               ? "bg-black text-green-500"
               : "bg-gray-200 text-black"
           }`}
-          onClick={() => {
-            console.log(is24HourFormat);
-            setTimeFormat(true);
-          }}
+          onClick={() => setTimeFormat(true)}
         >
           24
         </div>
