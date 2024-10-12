@@ -3,7 +3,7 @@ import React, { createContext, useState, useContext } from "react";
 export const TimeFormatContext = createContext();
 
 export const TimeFormatProvider = ({ children }) => {
-  const [is24HourFormat, setIs24HourFormat] = useState(true);
+  const [is24HourFormat, setIs24HourFormat] = useState(false);
 
   const setTimeFormat = (is24HourFormat) => {
     setIs24HourFormat(is24HourFormat);

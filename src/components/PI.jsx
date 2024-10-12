@@ -14,9 +14,8 @@ const PI = () => {
     let hours = now.getHours();
     const minutes = String(now.getMinutes()).padStart(2, "0");
 
-    console.log(is24HourFormat)
     if (!is24HourFormat) {
-      hours = hours % 12 || 12;
+      hours = hours > 12 ? hours % 12 : hours;
     }
     const formattedHours = String(hours).padStart(2, "0");
 
@@ -29,7 +28,7 @@ const PI = () => {
     return () => {
       clearInterval(intervalId);
     };
-  }, []);
+  }, [is24HourFormat]);
 
   useEffect(() => {
     const firstIndexCurrentTime = pi.indexOf(time);
