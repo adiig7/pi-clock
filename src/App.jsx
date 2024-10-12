@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { pi } from "./config";
+import Header from "./components/header";
 
 function App() {
   const [time, setTime] = useState("");
@@ -50,7 +51,7 @@ function App() {
   return (
     <div className="flex w-screen h-screen bg-gradient-to-r from-slate-600 to-slate-800 overflow-y-auto">
       <div className="w-full h-fit p-4">
-        <h1 className="text-center text-white mb-4 text-7xl">&#960; clock</h1>
+        <Header />
         <p className="break-words text-gray-500 text-center text-sm md:text-xl tracking-widest select-none">
           {highlightedPi}
         </p>
