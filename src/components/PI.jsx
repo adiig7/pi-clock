@@ -22,10 +22,10 @@ const PI = () => {
   }, []);
 
   useEffect(() => {
-    const firstIndex = pi.indexOf(time);
-    if (firstIndex !== -1) {
-      const before = pi.substring(0, firstIndex);
-      const after = pi.substring(firstIndex + time.length);
+    const firstIndexCurrentTime = pi.indexOf(time);
+    if (firstIndexCurrentTime !== -1) {
+      const before = pi.substring(0, firstIndexCurrentTime);
+      const after = pi.substring(firstIndexCurrentTime + time.length);
       setHighlightedPi(
         <>
           {before}
