@@ -33,24 +33,24 @@ function App() {
             ref={highlightRef} 
             className="bg-red-500 text-white text-3xl tracking-widest px-2 mx-2 rounded-md"
           >
-            {time}
+            {time.slice(0, 2)}:{time.slice(2)}
           </span>
           {after}
         </>
       );
 
-      // Scroll to the highlighted element
       setTimeout(() => {
         highlightRef.current?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }, 0); // Delay scrolling to ensure the DOM updates first
+      }, 0);
     } else {
       setHighlightedPi(pi); 
     }
   }, [time]);
 
   return (
-    <div className="flex w-screen h-screen bg-gray-800 overflow-y-auto">
+    <div className="flex w-screen h-screen bg-gradient-to-r from-slate-600 to-slate-800 overflow-y-auto">
       <div className="w-full h-fit p-4">
+        <h1 className="text-center text-white mb-4 text-7xl">&#960; clock</h1>
         <p className="break-words text-gray-500 text-center text-sm md:text-xl tracking-widest select-none">
           {highlightedPi}
         </p>
