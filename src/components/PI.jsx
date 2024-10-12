@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { pi } from "./config";
+import { pi } from "../config";
 
 const PI = () => {
   const [time, setTime] = useState("");
@@ -51,7 +51,7 @@ const PI = () => {
   }, [time]);
 
   return (
-    <p className="break-words text-gray-500 text-center text-sm md:text-xl tracking-widest select-none">
+    <p className="break-words text-gray-500 my-4 text-center md:text-left text-sm md:text-xl tracking-widest select-none">
       {highlightedPi}
     </p>
   );
