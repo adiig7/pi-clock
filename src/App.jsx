@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import PI from "./components/PI";
+import TimeFormatSwitcher from "./components/TimeFormatSwitcher";
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <div className="w-full h-fit p-4">
         <Header />
         <PI />
+        <TimeFormatSwitcher />
       </div>
     </div>
   );

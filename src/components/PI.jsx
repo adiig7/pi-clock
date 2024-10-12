@@ -1,17 +1,27 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import { pi } from "../config";
+import { TimeFormatContext } from "../context/TimeFormatProvider";
 
 const PI = () => {
+  const { is24HourFormat } = useContext(TimeFormatContext);
+
   const [time, setTime] = useState("");
   const [highlightedPi, setHighlightedPi] = useState(pi);
   const highlightRef = useRef(null);
 
   const updateTime = () => {
     const now = new Date();
-    const hours = String(now.getHours()).padStart(2, "0");
+    let hours = now.getHours();
     const minutes = String(now.getMinutes()).padStart(2, "0");
-    setTime(`${hours}${minutes}`);
-  };
+
+    console.log(is24HourFormat)
+    if (!is24HourFormat) {
+      hours = hours % 12 || 12;
+    }
+    const formattedHours = String(hours).padStart(2, "0");
+
+    setTime(`${formattedHours}${minutes}`);
+  }
 
   useEffect(() => {
     updateTime();
